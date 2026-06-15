@@ -17,6 +17,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		return res.status(405).json({ error: 'Method Not Allowed' })
 	}
 
+	if (!API_KEY) {
+		return res.status(500).json({ error: 'ETHERSCAN_API_KEY not configured' })
+	}
+
 	try {
 		const results = await Promise.allSettled([
 			fetchJson<{ result: string }>(etherscanUrl('proxy', 'eth_blockNumber'), TIMEOUT),
