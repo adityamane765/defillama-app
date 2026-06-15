@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import * as duneCache from '~/utils/dune-cache'
 
 const DUNE_API_URL = 'https://api.dune.com/api/v1'
-const DUNE_API_KEY = 'YdjmcWGRqalcfxfIdyqCH0e7jIRHJzUL'
+const DUNE_API_KEY = process.env.DUNE_API_KEY
 
 const ALLOWED_QUERY_IDS = new Set(['6370257'])
 

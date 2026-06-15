@@ -3,7 +3,7 @@ import { fetchJson } from '~/utils/async'
 
 const ETHERSCAN_BASE = 'https://api.etherscan.io/v2/api'
 const CHAIN_ID = 146
-const API_KEY = 'U7FNUA3JZ3VGYGBKDQJCUZ5KX3PUNKZMW5'
+const API_KEY = process.env.ETHERSCAN_API_KEY
 const BURN_API = 'https://burn.soniclabs.com/api/data'
 const TIMEOUT = { timeout: 15_000 }
 
