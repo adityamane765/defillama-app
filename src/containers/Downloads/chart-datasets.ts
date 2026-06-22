@@ -310,7 +310,8 @@ function makeDimensionProtocolChart(opts: {
 		paramLabel: 'Protocol',
 		optionsUrl: `${SERVER_URL}/overview/${opts.adapterType}?${OVERVIEW_QS}${dtParam}`,
 		extractOptions: extractOverviewProtocolOptions,
-		buildUrl: (param: string) => `${V2_SERVER_URL}/chart/${opts.adapterType}/protocol/${encodeURIComponent(param)}${dtChartParam}`,
+		buildUrl: (param: string) =>
+			`${V2_SERVER_URL}/chart/${opts.adapterType}/protocol/${encodeURIComponent(param)}${dtChartParam}`,
 		extractRows: extractTimestampValuePairs,
 		categoryBreakdown: { kind: 'dimension', adapterType: opts.adapterType, dataType: opts.dataType }
 	}
@@ -374,7 +375,8 @@ function makeDimensionCategoryChart(opts: {
 		paramLabel: 'Category',
 		optionsUrl: `${SERVER_URL}/overview/${opts.adapterType}?${OVERVIEW_QS}${dtParam}`,
 		extractOptions: extractOverviewCategoryOptions,
-		buildUrl: (param: string) => `${V2_SERVER_URL}/chart/${opts.adapterType}/category/${encodeURIComponent(param)}${dtChartParam}`,
+		buildUrl: (param: string) =>
+			`${V2_SERVER_URL}/chart/${opts.adapterType}/category/${encodeURIComponent(param)}${dtChartParam}`,
 		extractRows: extractTimestampValuePairs
 	}
 }
@@ -692,7 +694,8 @@ export const chartDatasets: ChartDatasetDefinition[] = [
 					.map((c: any) => ({ label: c.name, value: c.name }))
 			]
 		},
-		buildUrl: (param: string) => (param === 'all' ? `${SERVER_URL}/lite/charts` : `${SERVER_URL}/lite/charts/${encodeURIComponent(param)}`),
+		buildUrl: (param: string) =>
+			param === 'all' ? `${SERVER_URL}/lite/charts` : `${SERVER_URL}/lite/charts/${encodeURIComponent(param)}`,
 		extractRows: extractLiteChartRows
 	},
 	{
